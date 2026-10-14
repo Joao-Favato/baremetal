@@ -2,8 +2,9 @@
 #include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
 
-#define SLEEP_TIME_MAIOR 1000
-#define SLEEP_TIME_MENOR 500
+#define SLEEP_TIME_MAIOR 500
+#define SLEEP_TIME_MENOR 200
+#define SLEEP_TIME_MEDIO 300
 
 // Define o LED usando Device Tree
 #define LED2_NODE DT_ALIAS(led2)
@@ -46,14 +47,17 @@ int main(void)
 
     while (1) {
         //Toggle do LED usando a nova API
-        gpio_pin_toggle_dt(&ledAzul);
+        //gpio_pin_toggle_dt(&ledAzul);
         k_msleep(SLEEP_TIME_MAIOR);
         gpio_pin_toggle_dt(&ledAzul);
-        k_msleep(SLEEP_TIME_MAIOR);
+        k_msleep(SLEEP_TIME_MENOR);
+        gpio_pin_toggle_dt(&ledAzul);
+        k_msleep(SLEEP_TIME_MEDIO);
+        gpio_pin_toggle_dt(&ledAzul);
         gpio_pin_toggle_dt(&ledVermelho);
         k_msleep(SLEEP_TIME_MENOR);
+        gpio_pin_toggle_dt(&ledAzul);
         gpio_pin_toggle_dt(&ledVermelho);
-        k_msleep(SLEEP_TIME_MENOR);
     }
     return 0;
 }
