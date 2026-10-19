@@ -59,29 +59,14 @@ void main(void)
 
     while (1) {
         gpio_pin_set_dt(&red_led, 1);
+        gpio_pin_set_dt(&blue_led, 1);
         k_msleep(100);
         gpio_pin_set_dt(&red_led, 0);
-        k_msleep(1000);
+        gpio_pin_set_dt(&blue_led, 0);
+        k_msleep(500);
         gpio_pin_set_dt(&red_led, 1);
         k_msleep(100);
         gpio_pin_set_dt(&red_led, 0);
-        k_msleep(1000);
-        gpio_pin_set_dt(&red_led, 1);
-        k_msleep(100);
-        gpio_pin_set_dt(&red_led, 0);
-        k_msleep(1000);
-        
-        gpio_pin_set_dt(&green_led, 1);
-        k_msleep(100);
-        gpio_pin_set_dt(&green_led, 0);
         k_msleep(500);
-        gpio_pin_set_dt(&green_led, 1);
-        k_msleep(100);
-        gpio_pin_set_dt(&green_led, 0);
-        k_msleep(500);
-        gpio_pin_set_dt(&green_led, 1);
-        k_msleep(100);
-        gpio_pin_set_dt(&green_led, 0);
-        k_msleep(1000);
     }
 }
