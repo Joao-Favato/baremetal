@@ -19,7 +19,7 @@ void pisca_thread_main_verde(void *p1, void *p2, void *p3)
         gpio_pin_set_dt(&led0, 1);
         k_msleep(100);
         gpio_pin_set_dt(&led0, 0);
-        k_msleep(900);
+        k_msleep(1000);
     }
 }
 
@@ -32,7 +32,7 @@ void pisca_thread_main_vermelho(void *p1, void *p2, void *p3) {
         gpio_pin_set_dt(&led2, 1);
         k_msleep(100);
         gpio_pin_set_dt(&led2, 0);
-        k_msleep(400);
+        k_msleep(350);
     }
 }
 
